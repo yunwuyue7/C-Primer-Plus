@@ -6,12 +6,12 @@
 
 int main(){
 	using namespace std;
-	const int trans_factor = 12;
+	const int TRANS_FACTOR = 12;
 	int height_raw;
 	
 	cout << "Please enter your height in inch: __\b\b";
 	cin >> height_raw;
-	int height_foot = height_raw / 12;
-	int height_inch = height_raw % 12;
+	int height_foot = height_raw / TRANS_FACTOR;
+	int height_inch = height_raw % TRANS_FACTOR;
 	cout << "Your height is " << height_foot << " foot and " << height_inch << " inch.";
 }
