@@ -1,24 +1,27 @@
 // T6
-// 编写一个程序，输入驱车里程（英里）和使用汽油量（加仑），
-// 输出汽车耗油量为一加仑的里程。
-// 然后输出欧洲风格的结果—即每100公里的耗油量（升）
+// 结构 CandyBar 包含 3 个成员，如编程练习 5 所示。请编写一个程序，
+// 创建一个包含 3 个元素的CandyBar数组，并将它们初始化为所选择的值，然后显示每个结构的内容。
 
 #include <iostream>
+
+struct CandyBat{
+	char brand[20];
+	float weight;
+	int calories;
+};
+
 int main(){
 	using namespace std;
 	
-	float mile, fuel_consum, mile_per_gallon, fuel_per_hundred_km;
+	CandyBat chocolate{
+		"Meiji",
+		1.2,
+		280
+	};
 	
-	cout << "Please enther your driving distance in mile: ";
-	cin >> mile;
-	cout << "Please enter the fuel consumption: ";
-	cin >> fuel_consum;
-	
-	mile_per_gallon = mile / fuel_consum;
-	fuel_per_hundred_km = fuel_consum / mile * 100;
-	
-	cout << "Your car can travel "<< mile_per_gallon << " on 1 gallon fuel." << endl;
-	cout << "Your car consumes  " << fuel_per_hundred_km << " of fuel to travel 100 KM.";
+	cout << "The brand of snack is " << chocolate.brand << endl;
+	cout << "The weight of snack is " << chocolate.weight << endl;
+	cout << "The carlories of snack is " << chocolate.calories;
 	
 	return 0;
 }

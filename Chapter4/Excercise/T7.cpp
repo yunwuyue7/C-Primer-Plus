@@ -1,22 +1,32 @@
 // T7 
-// 编写一个程序，要求用户按欧洲风格输入汽车的耗油量（每100公里消耗的汽油量（升）），
-// 然后将其转换为美国风格的耗油量—每加仑多少英里。
-// 注意，美国方法（距离/燃料）与欧洲方法（燃料/距离）相反。
-// 单位换算：100公里等于62.14英里，1加仑等于3.875升。
+// William从事比萨饼分析服务。对于每个披萨饼，他都需要记录下列信息：
+// 1.披萨饼公司的名称，可以有多个单词组成; 2.披萨饼的直径; 3.披萨饼的重量。
+// 请设计一个能够存储这些信息的结构，并编写一个使用这种结构变量的程序。
+// 程序将请求用户输入上述信息，然后显示这些信息。请使用cin（或它的方法）和cout。
 
 #include <iostream>
-int main(){
-	using namespace std;
+#include <string>
+
+using namespace std;
+
+struct pizza_info{
+	string company;
+	float diameter;
+	float weight;
+};	
+
+int main(){	
+	pizza_info test_struct;
 	
-	float fuel_per_100km, mile_per_gallon;
-	const float LITER_PER_GALLON = 3.875;
-	const float MILE_TO_KILOMETER = 0.6214;
+	cout << "Please enter the company name: ";
+	getline(cin, test_struct.company);
+	cout << "Please enter the diameter of pizza: ";
+	cin >> test_struct.diameter;
+	cout << "Please enter the weight of pizza: ";
+	cin >> test_struct.weight;
 	
-	cout << "Please enter your car's fuel consumption per 100KM: ";
-	cin >> fuel_per_100km;
-	
-	mile_per_gallon =  100 / fuel_per_100km * LITER_PER_GALLON * MILE_TO_KILOMETER;
-	cout << "Your car can drive " << mile_per_gallon << " mile per gallon fuel.";
+	cout << endl;
+	cout << "The company，diameter，weight of the test struct is: " << test_struct.company << ", " << test_struct.diameter << ", " << test_struct.weight;
 	
 	return 0;
 }

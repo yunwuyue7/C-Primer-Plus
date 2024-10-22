@@ -1,21 +1,29 @@
 // T5
-// 编写一个程序，输入全球当前人口与美国当前人口（或其他国家人口）
-// 将这些信息存储在long long变量中，并显示该国加人口占全球人口的百分比
+// 结构CandyBar包含3个成员。第一个成员存储了糖块的品牌；第二个成员存储糖块的重量（可以有小数）；
+// 第三个成员存储了糖块的卡路里含量（整数）。请编写一个程序，声明这个结构，
+// 创建一个名为snack的CandyBar变量，并将其成员分别初始化为“Mocha Munch”、2.3和350。
+// 初始化应在声明snack时进行。最后，程序显示snack变量的内容。
 
 #include <iostream>
+
 int main(){
 	using namespace std;
 	
-	long long world_population, us_population;
-	float us_proportion;
+	struct CandyBat{
+		char brand[20];
+		float weight;
+		int carlories;
+	};
 	
-	cout << "Enter the world's population: ";
-	cin >> world_population;
-	cout << "Enter the US's population: ";
-	cin >> us_population;
+   CandyBat snack{
+		"Mocha Munch",
+		2.3,
+		350
+	};
 	
-	us_proportion = float(us_population) / world_population * 100;
+	cout << "The brand of snack is " << snack.brand << endl;
+	cout << "The weight of snack is " << snack.weight << endl;
+	cout << "The carlories of snack is " << snack.carlories;
 	
-	cout << "The population of the US is " << us_proportion << "% of the world population.";
-    return 0;
+	return 0;
 }

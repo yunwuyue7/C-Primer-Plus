@@ -1,29 +1,27 @@
 // T3
-// 编写一个程序，要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。
-// 以符号常量的方式表示：1度 = 60分，1分 = 60秒。
-// 对于每个输入值，使用独立的变量存储。
+// 编写一个程序，它要求用户首先输入其名，然后输入其姓；
+// 然后程序使用一个逗号和空格将姓和名组合起来，并存储和显示组合结果。
+// 请使用char数组和头文件cstring中的函数。下面是该程序运行时的情形：
+// Enter your first name: Flip
+// Enter your last name: Fleming
+// Here's the information in a single string: Fleming, Flip
 
 #include <iostream>
+#include <cstring>
 
 int main(){
 	using namespace std;
-	const int DEGREE_TO_MINUTE = 60;
-	const int MINUTE_TO_SECOND = 60;
+	char first_name[20], last_name[20], full_name[40];
 	
-	int degree, minute, second;
-	float res;
+	cout << "Enter your first name:"; 
+	cin >> first_name;
+	cout << "Enter your last name:";
+	cin >> last_name;
 	
-	cout << "Enter a latitude in degrees, minutes, and seceonds: " << endl; 
+	strcpy(full_name, first_name);
+	strcat(full_name, ", ");
+	strcat(full_name, last_name);
 	
-	cout << "First, enter the degrees: ";
-	cin >> degree;
-	cout << "Next, enter the minutes of arc: ";
-	cin >> minute;
-	cout << "Finally, enter the seconds of arc: " ;
-	cin >> second;
-	
-	res = degree + float(minute) / DEGREE_TO_MINUTE + float(second) / MINUTE_TO_SECOND / DEGREE_TO_MINUTE;
-	cout << degree << " degrees, " << minute << " minutes, " << second << "seconds = " << res << " degrees";
-	
+	cout << "Here's the information in a single string: " << full_name <<endl;
 	return 0;
 }
